@@ -26,7 +26,7 @@
  */
 
 define([
-  'mockup-patterns-base',
+  'pat-base',
   'jquery'
 ], function (Base, $) {
   'use strict';

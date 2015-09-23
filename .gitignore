@@ -1,7 +1,8 @@
 *.py?
-/bower_components
-/build/
-/coverage/
-/docs/
-/node_modules/
-/test-results.xml
+bower_components/
+build/
+coverage/
+docs/
+lib/
+node_modules/
+test-results.xml
