@@ -26,7 +26,7 @@ module.exports = function(grunt) {
   mockup.registerBundle('docs',
     {less: {options: {modifyVars: {bowerPath: '"bower_components/"' }}}},
     {extraInclude: docsExtraIncludes},
-    ['less',]
+    ['requirejs', 'uglify', 'less',]
   );
 
   // Register the Minimalpattern pattern

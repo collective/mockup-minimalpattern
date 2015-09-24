@@ -46,7 +46,7 @@ bundle-minimalpattern:
 
 # Docs build task
 docs:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) bundle-docs $(DEBUG) $(VERBOSE)
+	rODE_PATH=$(NODE_PATH) $(GRUNT) bundle-docs $(DEBUG) $(VERBOSE) --gruntfile=Gruntfile.js
 
 bootstrap-common:
 	mkdir -p build
