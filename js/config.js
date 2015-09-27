@@ -11,7 +11,6 @@
         paths: {
           'mockup-patterns-minimalpattern': 'patterns/minimalpattern/pattern',
           'mockup-bundles-minimalpattern': 'js/bundles/minimalpattern',
-          'mockup-bundles-docs-minimalpattern': 'js/bundles/docs'
         },
         shim: {}
       };

@@ -19,13 +19,6 @@ Then::
 
 Then::
 
-    $ make docs
     $ python -m SimpleHTTPServer
     $ chrome http://localhost:8000
 
-
-TODO
-----
-
-- Resolve todo's in the code,
-- Write an example test.

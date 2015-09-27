@@ -3,18 +3,16 @@
 <head>
   <meta charset="utf-8">
   <title>Mockup Minimalpattern Documentation</title>
-  <!-- all the base styles for making the documentation look good -->
   <link rel="stylesheet" href="build/minimalpattern.min.css" type="text/css">
   <script src="build/minimalpattern.min.js"></script>
   <script>
     window.DEBUG = true;  // setup logging to DEBUG
-    // set the RequireJS entry point to the pattern's documentation bundle.
-    // This one depends on the minimal pattern.
+    // Set the RequireJS entry point to the pattern itself.
     require(['mockup-patterns-minimalpattern']);
   </script>
 </head>
 <body>
-  <!-- Include the minimal pattern -->
+  <!-- Use the minimal pattern -->
   <div class="pat-minimalpattern"></div>
 </body>
 </html>

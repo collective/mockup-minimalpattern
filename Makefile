@@ -36,29 +36,20 @@ endif
 
 # Make tasks
 
-# All runs tasks test-once, bundles and docs
-all: test-once bundles docs
+# All runs tasks test-once, bundles
+all: test-once bundle-minimalpattern
 
 # Minimalpattern build task
 bundle-minimalpattern:
 	mkdir -p build
 	NODE_PATH=$(NODE_PATH) $(GRUNT) bundle-minimalpattern $(DEBUG) $(VERBOSE)
 
-# Docs build task
-docs:
-	rODE_PATH=$(NODE_PATH) $(GRUNT) bundle-docs $(DEBUG) $(VERBOSE) --gruntfile=Gruntfile.js
-
-bootstrap-common:
-	mkdir -p build
-
 bootstrap: clean bootstrap-common
+	mkdir -p build
 	@echo node version: $(NODE_VERSION)
 ifeq ($(NODE_VERSION_LT_011),true)
 	# for node < v0.11.x
 	$(NPM) link --prefix=.
-	# remove lib/node_modules, which contains a symlink to the project root.
-	# This leads to infinite recursion at the grunt copy task on make docs.
-	rm -rf lib/node_modules
 else
 	$(NPM) link
 endif
@@ -69,7 +60,7 @@ endif
 jshint:
 	NODE_PATH=$(NODE_PATH) $(GRUNT) jshint jscs $(DEBUG) $(VERBOSE)
 
-# Run grunt and watch for changes.  TODO: run what?
+# Run grunt and watch for changes.
 watch:
 	NODE_PATH=$(NODE_PATH) $(GRUNT) watch $(DEBUG) $(VERBOSE)
 
@@ -102,4 +93,4 @@ clean-deep: clean
 	if test -f $(NPM); then $(NPM) cache clean; fi
 
 # Expose these options to the command line shell expansion mechanism
-.PHONY: all bundle-minimalpattern docs bootstrap jshint test test-once test-dev test-ci clean clean-deep
+.PHONY: all bundle-minimalpattern bootstrap jshint watch test test-once test-dev test-ci clean clean-deep
