@@ -58,7 +58,7 @@ endif
 
 # JSHint checker task
 jshint:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) jshint jscs $(DEBUG) $(VERBOSE)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) jshint $(DEBUG) $(VERBOSE)
 
 # Run grunt and watch for changes.
 watch:
