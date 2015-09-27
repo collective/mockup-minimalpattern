@@ -21,9 +21,7 @@
       'pat-mockup-parser': 'bower_components/patternslib/src/core/mockup-parser',
       'pat-registry': 'bower_components/patternslib/src/core/registry',
       'pat-utils': 'bower_components/patternslib/src/core/utils',
-      'underscore': 'bower_components/underscore/underscore',
-
-
+      'underscore': 'bower_components/underscore/underscore'
     }
   };
 
