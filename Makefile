@@ -44,7 +44,7 @@ bundle-minimalpattern:
 	mkdir -p build
 	NODE_PATH=$(NODE_PATH) $(GRUNT) bundle-minimalpattern $(DEBUG) $(VERBOSE)
 
-bootstrap: clean bootstrap-common
+bootstrap: clean
 	mkdir -p build
 	@echo node version: $(NODE_VERSION)
 ifeq ($(NODE_VERSION_LT_011),true)
