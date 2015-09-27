@@ -4,24 +4,28 @@
 (function() {
   'use strict';
 
-  var extend = require('extend'),
-      requirejsOptions = require('../bower_components/mockup/mockup/js/config'),
-      ploneMockupPrefix = 'bower_components/mockup/mockup/',
-      requirejsOptionsExtend = {
-        paths: {
-          'mockup-patterns-minimalpattern': 'patterns/minimalpattern/pattern',
-          'mockup-bundles-minimalpattern': 'js/bundles/minimalpattern',
-        },
-        shim: {}
-      };
+  var requirejsOptions = {
+    baseUrl: './',
+    optimize: 'none',
+    paths: {
+      'mockup-bundles-minimalpattern': 'js/bundles/minimalpattern',
+      'mockup-patterns-minimalpattern': 'patterns/minimalpattern/pattern',
+      // FRAMEWORK DEPENDENCIES
+      'expect': 'bower_components/expect/index',
+      'jquery': 'bower_components/jquery/dist/jquery',
+      'logging': 'bower_components/logging/src/logging',
+      'pat-base': 'bower_components/patternslib/src/core/base',
+      'pat-compat': 'bower_components/patternslib/src/core/compat',
+      'pat-jquery-ext': 'bower_components/patternslib/src/core/jquery-ext',
+      'pat-logger': 'bower_components/patternslib/src/core/logger',
+      'pat-mockup-parser': 'bower_components/patternslib/src/core/mockup-parser',
+      'pat-registry': 'bower_components/patternslib/src/core/registry',
+      'pat-utils': 'bower_components/patternslib/src/core/utils',
+      'underscore': 'bower_components/underscore/underscore',
 
-  // fix paths for mockup patterns and resources
-  for (var p in requirejsOptions.paths) {
-    if(requirejsOptions.paths[p].indexOf('bower_components/') === -1) {
-      requirejsOptions.paths[p] = ploneMockupPrefix + requirejsOptions.paths[p];
+
     }
-  }
-  extend(true, requirejsOptions, requirejsOptionsExtend);
+  };
 
   if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
     module.exports = requirejsOptions;
