@@ -20,8 +20,12 @@ define([
       var $doc = $('<div class="pat-minimalpattern"></div>').appendTo('body');
       registry.scan($doc);
 
-      var $el = $('.pat-minimalpattern');
-      expect($el.text()).to.be.equal("ey ya!");
+      setTimeout(function () {
+        // wait for two seconds, until all is settled.
+        // TODO: use event listener instead.
+        var $el = $('.pat-minimalpattern');
+        expect($el.text()).to.be.equal("ey ya!");
+      }, 2000);
 
     });
 
