@@ -42,7 +42,7 @@ all: test-once bundle-minimalpattern
 # Minimalpattern build task
 bundle-minimalpattern:
 	mkdir -p build
-	NODE_PATH=$(NODE_PATH) $(GRUNT) bundle-minimalpattern $(DEBUG) $(VERBOSE)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) bundle-minimalpattern $(DEBUG) $(VERBOSE) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
 bootstrap: clean
 	mkdir -p build
@@ -54,38 +54,38 @@ else
 	$(NPM) link
 endif
 	NODE_PATH=$(NODE_PATH) $(BOWER) install --config.interactive=0
-	NODE_PATH=$(NODE_PATH) $(GRUNT) sed:bootstrap $(DEBUG) $(VERBOSE)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) sed:bootstrap $(DEBUG) $(VERBOSE) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
 # JSHint checker task
 jshint:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) jshint $(DEBUG) $(VERBOSE)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) jshint $(DEBUG) $(VERBOSE) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
 # Run grunt and watch for changes.
 watch:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) watch $(DEBUG) $(VERBOSE)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) watch $(DEBUG) $(VERBOSE) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
 # Run tests headless via PhantomJS and watch for changes.
 test:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) test $(DEBUG) $(VERBOSE) --pattern=$(pattern)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) test $(DEBUG) $(VERBOSE) --pattern=$(pattern) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
 # Run the tests headless with PhantomJS only once and exit.
 test-once:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) test_once $(DEBUG) $(VERBOSE) --pattern=$(pattern)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) test_once $(DEBUG) $(VERBOSE) --pattern=$(pattern) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
 # Run the tests for Chromium and watch for changes.
 test-dev:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) test_dev $(DEBUG) $(VERBOSE) --pattern=$(pattern)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) test_dev $(DEBUG) $(VERBOSE) --pattern=$(pattern) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
 # Run the tests in a continious integration setup.
 test-ci:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) test_ci $(DEBUG) $(VERBOSE)
+	NODE_PATH=$(NODE_PATH) $(GRUNT) test_ci $(DEBUG) $(VERBOSE) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
 # Cleanup the project and remove directories set up by previous tasks 
 clean:
 	mkdir -p build
 	rm -rf build
 	rm -rf node_modules
-	rm -rf bower_components
+	rm -rf mockup/bower_components
 
 # Also clean bower and npm caches.
 clean-deep: clean
