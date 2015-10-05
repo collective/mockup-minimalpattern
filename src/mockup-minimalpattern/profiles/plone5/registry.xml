@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<registry>
+
+  <records prefix="plone.resources/mockup-patterns-minimalpattern"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++resource++minimalpattern/patterns/minimalpattern/pattern.js</value>
+      <value key="css">
+        <element>++resource++minimalpattern/patterns/minimalpattern/pattern.minimalpattern.less</element>
+      </value>
+  </records>
+
+  <records prefix="plone.bundles/mockup-bundle-minimalpattern"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>mockup-patterns-minimalpattern</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="jscompilation"></value>
+    <value key="csscompilation"></value>
+    <value key="last_compilation"></value>
+    <value key="depends"></value>
+  </records>
+
+</registry>

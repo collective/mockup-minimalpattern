@@ -6,8 +6,9 @@ html contents of a DOM element with a configurable test.
 It can be used to learn about mockup, the source code is annotated with
 comments.
 
-Getting started
----------------
+
+Bootstrap the JS environment for pattern development
+----------------------------------------------------
 
 Make sure, you have `GNU make`, `node` and `git` installed.
 
@@ -17,8 +18,45 @@ Then::
     $ cd mockup-minimalpattern
     $ make bootstrap
 
+Create the bundles (needed for development and Plone 4. For integration in
+Plone 5, the bundle can be compiled through the web)::
+
+    $ make bundle-minimalpattern
+
 Then::
 
     $ python -m SimpleHTTPServer
     $ chrome http://localhost:8000
 
+
+Run the tests.
+
+In watch mode::
+
+    $ make test pattern=pattern-minimalpattern
+
+Only once::
+    
+    $ make test-once pattern=pattern-minimalpattern
+
+In Google Chrome browser::
+
+    $ make test-dev pattern=pattern-minimalpattern
+
+Please note: Normally all tests in the test directory are run. But here, we
+have to explicitly tell the testrunner, which test to run. I'm not sure why,
+and I'm to lazy to debug that - that happened since I moved the whole
+Javascript into a Python-reachable directory
+(commit: 9cac63e9b9c961fd3fc6d94945fb8966c37ef593 ).
+
+
+Bootstrap Plone for testing the Plone integration
+----------------------------------------------------
+
+::
+
+    $ git clone https://github.com/collective/collective.minimalpattern.git
+    $ cd collective.minimalpattern
+    $ virtualenv .
+    $ ./bin/pip install zc.buildout
+    $ ./bin/buildout
