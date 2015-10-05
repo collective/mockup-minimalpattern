@@ -76,10 +76,6 @@ test-once:
 test-dev:
 	NODE_PATH=$(NODE_PATH) $(GRUNT) test_dev $(DEBUG) $(VERBOSE) --pattern=$(pattern) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
 
-# Run the tests in a continious integration setup.
-test-ci:
-	NODE_PATH=$(NODE_PATH) $(GRUNT) test_ci $(DEBUG) $(VERBOSE) --gruntfile=src/mockup-minimalpattern/js/Gruntfile.js
-
 # Cleanup the project and remove directories set up by previous tasks 
 clean:
 	mkdir -p build
@@ -93,4 +89,4 @@ clean-deep: clean
 	if test -f $(NPM); then $(NPM) cache clean; fi
 
 # Expose these options to the command line shell expansion mechanism
-.PHONY: all bundle-minimalpattern bootstrap jshint watch test test-once test-dev test-ci clean clean-deep
+.PHONY: all bundle-minimalpattern bootstrap jshint watch test test-once test-dev clean clean-deep
