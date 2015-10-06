@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <registry>
 
-  <records prefix="plone.resources/mockup-patterns-minimalpattern"
+  <records prefix="plone.resources/pattern-minimalpattern"
             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
       <value key="js">++resource++minimalpattern/patterns/minimalpattern/pattern.js</value>
       <value key="css">
@@ -9,10 +9,10 @@
       </value>
   </records>
 
-  <records prefix="plone.bundles/mockup-bundle-minimalpattern"
+  <records prefix="plone.bundles/bundle-minimalpattern"
             interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="resources">
-      <element>mockup-patterns-minimalpattern</element>
+      <element>pattern-minimalpattern</element>
     </value>
     <value key="depends">plone</value>
     <value key="enabled">True</value>
