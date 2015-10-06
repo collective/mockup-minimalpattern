@@ -1,11 +1,13 @@
 <configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:plone="http://namespaces.plone.org/plone"
            xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:gs="http://namespaces.zope.org/genericsetup"
            xmlns:zcml="http://namespaces.zope.org/zcml">
 
-  <browser:resourceDirectory
-      name="minimalpattern"
+  <plone:static
       directory="js"
+      type="plone"
+      name="minimalpattern"
       />
 
   <browser:page
