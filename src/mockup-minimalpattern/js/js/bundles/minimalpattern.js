@@ -5,9 +5,12 @@ require([
 ], function($, Registry) {
   'use strict';
 
-  $(document).ready(function() {
-    var $registry = $('.pat-minimalpattern'); // Get all DOM nodes with the specified class.
-    Registry.scan($registry);  // Add ``pat-minimalpattern`` to Mockup's registry.
-  });
+  if (window.parent === window) {
+    $(document).ready(function() {
+      if (!Registry.initialized) {
+        Registry.init();
+      }
+    });
+  }
 
 });
