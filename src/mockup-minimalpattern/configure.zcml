@@ -4,9 +4,16 @@
            xmlns:gs="http://namespaces.zope.org/genericsetup"
            xmlns:zcml="http://namespaces.zope.org/zcml">
 
+  <include package="plone.resource" file="meta.zcml"/>
   <plone:static
       directory="js"
       type="plone"
+      name="minimalpattern"
+      />
+
+  <!-- TODO: see, why Plone 4 cannot access plone.resource directory from above ^^^ -->
+  <browser:resourceDirectory
+      directory="js"
       name="minimalpattern"
       />
 

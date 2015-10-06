@@ -27,7 +27,9 @@ setup(
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
-    install_requires=[],
+    install_requires=[
+        'plone.resource',
+    ],
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
