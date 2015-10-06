@@ -2,7 +2,7 @@ define([
   'expect',
   'jquery',
   'pat-registry',
-  'pattern-minimalpattern',
+  'mockup-patterns-minimalpattern',
 ], function(expect, $, registry, minimalpattern) {
   'use strict';
 

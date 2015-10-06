@@ -8,8 +8,8 @@
     baseUrl: './',
     optimize: 'none',
     paths: {
-      'bundle-minimalpattern': 'js/bundles/minimalpattern',
-      'pattern-minimalpattern': 'patterns/minimalpattern/pattern',
+      'mockup-bundles-minimalpattern': 'js/bundles/minimalpattern',
+      'mockup-patterns-minimalpattern': 'patterns/minimalpattern/pattern',
       // FRAMEWORK DEPENDENCIES
       'expect': 'bower_components/expect/index',
       'jquery': 'bower_components/jquery/dist/jquery',
