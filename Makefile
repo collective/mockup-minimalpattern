@@ -36,6 +36,18 @@ endif
 
 # Make tasks
 
+plone:
+	./cleanup-plone.sh
+	virtualenv .
+	./bin/pip install zc.buildout
+	./bin/buildout
+
+plone4:
+	./cleanup-plone.sh
+	virtualenv .
+	./bin/pip install zc.buildout
+	./bin/buildout -c buildout-plone4.cfg
+
 # All runs tasks test-once, bundles
 all: test-once bundle-minimalpattern
 
@@ -89,4 +101,4 @@ clean-deep: clean
 	if test -f $(NPM); then $(NPM) cache clean; fi
 
 # Expose these options to the command line shell expansion mechanism
-.PHONY: all bundle-minimalpattern bootstrap jshint watch test test-once test-dev clean clean-deep
+.PHONY: all plone plone4 bundle-minimalpattern bootstrap jshint watch test test-once test-dev clean clean-deep

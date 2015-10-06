@@ -53,10 +53,18 @@ Javascript into a Python-reachable directory
 Bootstrap Plone for testing the Plone integration
 ----------------------------------------------------
 
-::
+Just use the provided ``make`` target commands (see ``Makefile``, for what they
+are doing).
 
-    $ git clone https://github.com/collective/collective.minimalpattern.git
-    $ cd collective.minimalpattern
-    $ virtualenv .
-    $ ./bin/pip install zc.buildout
-    $ ./bin/buildout
+.. note::
+
+    The make targets to bootstrap Plone erase the ``var`` directory! You will
+    loose any changes made to your Plone database.
+
+For Plone 5::
+
+    $ make plone
+
+For Plone 4::
+
+    $ make plone4
