@@ -9,10 +9,18 @@
       </value>
   </records>
 
+  <records prefix="plone.resources/bundle-minimalpattern"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++resource++minimalpattern/js/bundles/minimalpattern.js</value>
+    <value key="css">
+      <element>++resource++minimalpattern/less/minimalpattern.less</element>
+    </value>
+  </records>
+
   <records prefix="plone.bundles/bundle-minimalpattern"
             interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="resources">
-      <element>pattern-minimalpattern</element>
+      <element>bundle-minimalpattern</element>
     </value>
     <value key="depends">plone</value>
     <value key="enabled">True</value>
