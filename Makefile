@@ -1,12 +1,10 @@
 # binary and other paths
 GIT = git
 NPM = npm
+NODE = node
 GRUNT = ./node_modules/grunt-cli/bin/grunt
 BOWER = ./node_modules/bower/bin/bower
 NODE_PATH = ./node_modules
-
-# node binary might be available under nodejs (ubuntu) or node (fedora, others)
-NODE = $(shell command -v nodejs > /dev/null && echo nodejs || echo node)
 
 # npm link has different behavior between node versions.
 # Get node version, e.g. "0.11.12"
@@ -55,7 +53,6 @@ bundle-minimalpattern:
 
 bootstrap: clean
 	# Install node/bower dependencies
-	alias node='$(NODE)'
 	mkdir -p build
 	@echo node version: $(NODE_VERSION)
 ifeq ($(NODE_VERSION_LT_011),true)
