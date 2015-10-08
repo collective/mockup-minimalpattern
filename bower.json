@@ -2,7 +2,7 @@
   "name": "mockup-minimalpattern",
   "description": "Minimal pattern for learning pattern creation",
   "dependencies": {
-    "mockup": "git@github.com:plone/mockup.git#master"
+    "mockup": "master"
   },
   "devDependencies": {
     "expect": "0.3.1",
