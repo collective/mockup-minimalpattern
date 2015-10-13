@@ -8,7 +8,20 @@
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 
+  <!-- just the pattern -->
   <div class="pat-minimalpattern">uh - what?</div>
+
+  <!--  provide options -->
+  <div
+      class="pat-minimalpattern"
+      data-pat-minimalpattern='{"text":"Ultra Duper!"}'>
+    uh - what?
+  </div>
+
+  <!-- inherited options -->
+  <div data-pat-minimalpattern='{"text":"Mega Duper!"}'>
+    <div class="pat-minimalpattern">uh - what?</div>
+  </div>
 
 </metal:block>
 </metal:content-core>

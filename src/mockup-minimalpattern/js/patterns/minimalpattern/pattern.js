@@ -34,11 +34,13 @@ define([
   var Minimalpattern = Base.extend({
     name: 'minimalpattern',
     trigger: '.pat-minimalpattern',  // has to be exact like this: 'pat-' + patternname.
+    parser: 'mockup',
     defaults: {
       text: 'Super Duper!'
     },
     init: function () {
       var self = this;
+      console.log(self);
       self.$el.html(self.options.text);
     }
   });
