@@ -15,6 +15,7 @@
   <browser:resourceDirectory
       directory="js"
       name="minimalpattern"
+      zcml:condition="not-have plone-5"
       />
 
   <browser:page
